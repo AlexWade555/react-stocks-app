@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import finnHub from "../apis/finnHub"
 
 export const StockList = () => {
-  const [stock, setStock] = useState()
+  const [stock, setStock] = useState([])
   const [watchList, setWatchList] = useState(["GOOGL", "MSFT", "AMZN"])
 
   useEffect(() => {
@@ -17,8 +17,15 @@ export const StockList = () => {
           })
         }))
         console.log(responses)
+        const data = responses.map((response) => {
+          return {
+            data: response.data,
+            symbol: response.config.params.symbol
+          }
+        })
+        console.log(data)
         if (isMounted) {
-          setStock(responses.data)
+          setStock(data)
         }
       } catch (error) {
 
