@@ -1,4 +1,6 @@
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
+import { StockOverviewPage } from "./pages/StockOverviewPage";
+import { StockDetailPage } from "./pages/StockDetailPage";
 import './App.css';
 
 export default function App() {
@@ -6,9 +8,8 @@ export default function App() {
     <main>
       <BrowserRouter>
         <Routes>
-          <Route>
-
-          </Route>
+          <Route path='/'element={<StockOverviewPage/>}/>
+          <Route path='/detail/:symbol' element={<StockDetailPage/>}/>
         </Routes>
       </BrowserRouter>
     </main>
