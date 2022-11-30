@@ -9,9 +9,11 @@ export const AutoComplete = () => {
     const dropDownClass = search ? "show" : null
     return (
       <ul className={`dropdown-menu ${dropDownClass}`}>
-        <li>dg</li>
-        <li>dg</li>
-        <li>dg</li>
+        {results.map((result) => {
+          return (
+            <li className="dropdown-item">{result.description}({result.symbol})</li>
+          )
+        })}
       </ul>
     )
   }
