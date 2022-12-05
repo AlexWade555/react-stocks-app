@@ -13,7 +13,13 @@ export const WatchListContextProvider = (props) => {
     }
   }
 
-  return <WatchListContext.Provider value={{watchList}}>
+  const deleteStock = (stock) => {
+    setWatchList(watchList.filter((el) => {
+      return el !== stock
+    }))
+  }
+
+  return <WatchListContext.Provider value={{watchList, addStock, deleteStock}}>
     {props.children}
   </WatchListContext.Provider>
 }
