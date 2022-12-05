@@ -1,9 +1,18 @@
 import { useParams } from "react-router-dom"
-import { useEffect } from "react"
-import axios from "axios"
+import { useEffect, useState } from "react"
 import finnHub from "../apis/finnHub"
 
+const formatData = (data) => {
+  return data.t.map((el, index) => {
+    return {
+      x: el * 1000,
+      y: data.c[index]
+    }
+  })
+}
+
 export const StockDetailPage = () => {
+  const [chartData, setChartData] = useState()
   const {symbol} = useParams()
   useEffect(() => {
     const fetchData = async () => {
@@ -45,6 +54,11 @@ export const StockDetailPage = () => {
           }
         })])
         console.log(responses)
+        setChartData({
+          day: formatData(responses[0].data),
+          week: formatData(responses[1].data),
+          year: formatData(responses[2].data)
+      })
       } catch (error) {
         console.log(error)
       }
