@@ -46,7 +46,7 @@ export const StockList = () => {
     fetchData()
 
     return () => (isMounted = false)
-  }, [])
+  }, [watchList])
 
   return <div>
     <table className="table hover mt-5">
