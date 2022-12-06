@@ -76,8 +76,9 @@ export const StockDetailPage = () => {
   return <div>
     {chartData && (
       <div>
-        <StockChart chartData={chartData} symbol={symbol} />
-        <StockData symbol={symbol} />
+
+        <StockChart chartData={chartData} symbol={symbol}/>
+
       </div>
     )}
   </div>
