@@ -23,5 +23,43 @@ export const StockData = ({symbol}) => {
     }
     fetchData()
   }, [symbol])
-  return <h2>Stock Data</h2>
+  return <div className="">
+    {stockData && (
+      <div className="row border bg-white rounded shadow-sm p-4 mt-5">
+        <div className="col">
+          <div>
+            <span className="fw-bold"></span>
+          </div>
+          <div>
+            <span className="fw-bold"></span>
+          </div>
+          <div>
+            <span className="fw-bold"></span>
+          </div>
+        </div>
+        <div className="col">
+        <div>
+            <span className="fw-bold"></span>
+          </div>
+          <div>
+            <span className="fw-bold"></span>
+          </div>
+          <div>
+            <span className="fw-bold"></span>
+          </div>
+        </div>
+        <div className="col">
+        <div>
+            <span className="fw-bold"></span>
+          </div>
+          <div>
+            <span className="fw-bold"></span>
+          </div>
+          <div>
+            <span className="fw-bold"></span>
+          </div>
+        </div>
+      </div>
+    )}
+  </div>
 }
