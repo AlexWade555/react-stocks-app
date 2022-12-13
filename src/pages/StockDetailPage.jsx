@@ -78,3 +78,4 @@ export const StockDetailPage = () => {
     )}
     </div>
 }
+// detail page
