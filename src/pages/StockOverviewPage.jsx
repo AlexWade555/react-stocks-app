@@ -1,10 +1,10 @@
 import {AutoComplete} from '../components/AutoComplete'
 import { StockList } from '../components/StockList'
-import logo from '../Logo.svg'
+import {ReactComponent as Logo} from '../Logo.svg'
 
 export const StockOverviewPage = () => {
   return <div>
-    <img scr={logo} alt="logo"/>
+    <Logo />
     <AutoComplete/>
     <StockList/>
   </div>
