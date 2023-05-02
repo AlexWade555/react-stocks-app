@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useParams } from "react-router-dom";
 
-const TOKEN = "cduq4oaad3i2h5f4nrfgcduq4oaad3i2h5f4nrg0"
+const TOKEN = "ch88fhpr01qhapm5lrkgch88fhpr01qhapm5lrl0"
 
 export default axios.create({
   baseURL: "https://finnhub.io/api/v1",
